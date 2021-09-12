@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { Error } from './Error';
+
 export const Pregunta = () => {
    // definir el state
    const [cantidad, guardarCantidad] = useState(0);
@@ -29,7 +31,7 @@ export const Pregunta = () => {
       <>
          <h2>Coloca tu presupuesto</h2>
 
-         {error ? <h1>hola</h1> : null}
+         {error ? <Error mensaje='El presupuesto es incorrecto' /> : null}
 
          <form onSubmit={agregarPresupuesto}>
             <input
