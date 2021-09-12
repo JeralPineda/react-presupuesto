@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 export const Pregunta = () => {
    // definir el state
    const [cantidad, guardarCantidad] = useState(0);
+   const [error, guardarError] = useState(false);
 
    // funcion que lee el presupuesto
    const definirPresupuesto = (e) => {
@@ -14,13 +15,21 @@ export const Pregunta = () => {
       e.preventDefault();
 
       // validar
+      if (cantidad < 1 || isNaN(cantidad)) {
+         guardarError(true);
+
+         return;
+      }
 
       // si se pasa la validacion
+      guardarError(false);
    };
 
    return (
       <>
          <h2>Coloca tu presupuesto</h2>
+
+         {error ? <h1>hola</h1> : null}
 
          <form onSubmit={agregarPresupuesto}>
             <input
