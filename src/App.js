@@ -6,7 +6,7 @@ function App() {
          <header>
             <h1>Gasto Semanal</h1>
 
-            <div class='contenido-principal contenido'>
+            <div className='contenido-principal contenido'>
                <Pregunta />
             </div>
          </header>
