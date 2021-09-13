@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 import { Error } from './Error';
 
@@ -54,4 +55,10 @@ export const Pregunta = ({ guardarPresupuesto, guardarRestante, actualizarPregun
          </form>
       </>
    );
+};
+
+Pregunta.propTypes = {
+   guardarPresupuesto: PropTypes.func.isRequired,
+   guardarRestante: PropTypes.func.isRequired,
+   actualizarPregunta: PropTypes.func.isRequired,
 };
