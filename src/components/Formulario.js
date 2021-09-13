@@ -17,6 +17,7 @@ export const Formulario = ({ guardarGasto, guardarCrearGasto }) => {
          guardarError(true);
          return;
       }
+      guardarError(false);
 
       // construir el gasto
       const gasto = {
