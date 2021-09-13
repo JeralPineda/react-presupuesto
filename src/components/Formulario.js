@@ -3,7 +3,7 @@ import shortid from 'shortid';
 
 import { Error } from './Error';
 
-export const Formulario = ({ agregarNuevoGasto }) => {
+export const Formulario = ({ guardarGasto, guardarCrearGasto }) => {
    const [nombre, guardarNombre] = useState('');
    const [cantidad, guardarCantidad] = useState(0);
    const [error, guardarError] = useState(false);
@@ -26,7 +26,8 @@ export const Formulario = ({ agregarNuevoGasto }) => {
       };
 
       //   pasar el gasto al componente principal
-      agregarNuevoGasto(gasto);
+      guardarGasto(gasto);
+      guardarCrearGasto(true);
 
       //   resetear el form
       guardarNombre('');
