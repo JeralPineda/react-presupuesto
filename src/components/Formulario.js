@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import shortid from 'shortid';
+
 import { Error } from './Error';
 
 export const Formulario = () => {
@@ -17,6 +19,13 @@ export const Formulario = () => {
       }
 
       // construir el gasto
+      const gasto = {
+         nombre,
+         cantidad,
+         id: shortid.generate(),
+      };
+
+      console.log(gasto);
 
       //   pasar el gasto al componente principal
 
